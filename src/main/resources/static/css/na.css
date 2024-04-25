@@ -1,4 +1,13 @@
-.test{
-    color:  red;
-    border: 2px solid black;
+body {
+    /* background-color: #f5f7fa; */
+    background-color: #1c4f9c;
+    margin: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.ht-450 {
+    height: 400px;
 }

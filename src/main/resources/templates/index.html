@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> />
     <title>Document</title>
 
     <!-- Bootstrap CDN link -->
@@ -21,107 +21,298 @@
 </head>
 
 <body>
-    <header>
-        <!--Main Navigation-->
-        <header class="mb-10">
+    <!--Main Navigation-->
+    <header class="mb-3">
 
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-                <!-- Container wrapper -->
-                <div class="container-fluid">
-                    <!-- Toggle button -->
-                    <button data-mdb-collapse-init class="navbar-toggler" type="button"
-                        data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top">
+            <!-- Container wrapper -->
+            <div class="container-fluid">
+                <!-- Toggle button -->
+                <button data-mdb-collapse-init class="navbar-toggler" type="button"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
 
-                    <!-- Collapsible wrapper -->
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Navbar brand -->
-                        <!-- <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar brand -->
+                    <!-- <a class="navbar-brand mt-2 mt-lg-0" href="#">
                             <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15"
                                 alt="MDB Logo" loading="lazy" />
                         </a> -->
-                        <!-- Left links -->
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Dashboard</a>
+                    <!-- Left links -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Projects</a>
+                        </li>
+                    </ul>
+                    <!-- Left links -->
+                </div>
+                <!-- Collapsible wrapper -->
+
+                <!-- Right elements -->
+                <div class="d-flex align-items-center">
+                    <!-- Icon -->
+                    <a class="text-reset me-3" href="#">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+
+                    <!-- Notifications -->
+                    <div class="dropdown">
+                        <a data-mdb-dropdown-init class="text-reset me-3 dropdown-toggle hidden-arrow" href="#"
+                            id="navbarDropdownMenuLink" role="button" aria-expanded="false">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="#">Some news</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Team</a>
+                            <li>
+                                <a class="dropdown-item" href="#">Another news</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Projects</a>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
                             </li>
                         </ul>
-                        <!-- Left links -->
                     </div>
-                    <!-- Collapsible wrapper -->
-
-                    <!-- Right elements -->
-                    <div class="d-flex align-items-center">
-                        <!-- Icon -->
-                        <a class="text-reset me-3" href="#">
-                            <i class="fas fa-shopping-cart"></i>
+                    <!-- Avatar -->
+                    <div class="dropdown">
+                        <a data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                            href="#" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
+                                height="25" alt="Black and White Portrait of a Man" loading="lazy" />
                         </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                            <li>
+                                <a class="dropdown-item" href="#">My profile</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Settings</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Right elements -->
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- Navbar -->
 
-                        <!-- Notifications -->
-                        <div class="dropdown">
-                            <a data-mdb-dropdown-init class="text-reset me-3 dropdown-toggle hidden-arrow" href="#"
-                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                                <i class="fas fa-bell"></i>
-                                <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                <li>
-                                    <a class="dropdown-item" href="#">Some news</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Another news</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </li>
-                            </ul>
+
+    </header>
+
+    <!-- Carousel Section -->
+    <section>
+        <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel"
+            data-mdb-carousel-init>
+            <div class="carousel-indicators">
+                <button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-mdb-target="#carouselExampleCrossfade" data-mdb-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp" class="d-block w-100 ht-450"
+                        alt="Wild Landscape" />
+                </div>
+                <div class="carousel-item">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp" class="d-block w-100 ht-450"
+                        alt="Camera" />
+                </div>
+                <div class="carousel-item">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp" class="d-block w-100 ht-450"
+                        alt="Exotic Fruits" />
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleCrossfade"
+                data-mdb-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleCrossfade"
+                data-mdb-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+    </section>
+
+    <!--Section -->
+    <section>
+        <!-- Popular section -->
+        <div class="container-fluid">
+            <h1>Most Popular</h1>
+        </div>
+        <!-- cards to show popular cakes -->
+        <div class="container-fluid">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 w-75">
+                        <div>
+                            <img th:src="@{/image/1.jpg}" class="card-img-top" style="height: 200px;">
                         </div>
-                        <!-- Avatar -->
-                        <div class="dropdown">
-                            <a data-mdb-dropdown-init class="dropdown-toggle d-flex align-items-center hidden-arrow"
-                                href="#" id="navbarDropdownMenuAvatar" role="button" aria-expanded="false">
-                                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
-                                    height="25" alt="Black and White Portrait of a Man" loading="lazy" />
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                                <li>
-                                    <a class="dropdown-item" href="#">My profile</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Settings</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Logout</a>
-                                </li>
-                            </ul>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
                         </div>
                     </div>
-                    <!-- Right elements -->
                 </div>
-                <!-- Container wrapper -->
-            </nav>
-            <!-- Navbar -->
+                <div class="col">
+                    <div class="card h-100 w-75">
+                        <img th:src="@{/image/2.jpg}" class="card-img-top" style="height: 200px;">
+                        <div class=" card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a short card.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 w-75">
+                        <img th:src="@{/image/3.jpg}" class="card-img-top" style="height: 200px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 w-75">
+                        <img th:src="@{/image/4.jpg}" class="card-img-top" style="height: 200px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <footer>
+        <div>
+            <footer style="background-color: #deded5;">
+                <div class="container p-4">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <h5 class="mb-3" style="letter-spacing: 2px; color: #818963;">footer content</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+                                molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+                                voluptatem veniam, est atque cumque eum delectus sint!
+                            </p>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <h5 class="mb-3" style="letter-spacing: 2px; color: #818963;">links</h5>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-1">
+                                    <a href="#!" style="color: #4f4f4f;">Frequently Asked Questions</a>
+                                </li>
+                                <li class="mb-1">
+                                    <a href="#!" style="color: #4f4f4f;">Delivery</a>
+                                </li>
+                                <li class="mb-1">
+                                    <a href="#!" style="color: #4f4f4f;">Pricing</a>
+                                </li>
+                                <li>
+                                    <a href="#!" style="color: #4f4f4f;">Where we deliver?</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <h5 class="mb-1" style="letter-spacing: 2px; color: #818963;">opening hours</h5>
+                            <table class="table" style="color: #4f4f4f; border-color: #666;">
+                                <tbody>
+                                    <tr>
+                                        <td>Mon - Fri:</td>
+                                        <td>8am - 9pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sat - Sun:</td>
+                                        <td>8am - 1am</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Remove the container if you want to extend the Footer to full width. -->
+                <div class="">
 
-        </header>
+                    <footer class="text-center text-white" style="background-color: #f1f1f1;">
+                        <!-- Grid container -->
+                        <div class="container pt-4">
+                            <!-- Section: Social media -->
+                            <section class="mb-4">
+                                <!-- Facebook -->
+                                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                                    data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
 
-        <!-- Custom Javascript -->
-        <script th:src="@{/js/navbar.js}"></script>
+                                <!-- Twitter -->
+                                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                                    data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
 
-        <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js}"></script>
+                                <!-- Google -->
+                                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                                    data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
 
-        <!-- MDB -->
-        <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
+                                <!-- Instagram -->
+                                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                                    data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+
+                                <!-- Linkedin -->
+                                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                                    data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                                <!-- Github -->
+                                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                                    data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+                            </section>
+                            <!-- Section: Social media -->
+                        </div>
+                        <!-- Grid container -->
+
+                        <!-- Copyright -->
+                        <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                            © 2020 Copyright:
+                            <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                        </div>
+                        <!-- Copyright -->
+                    </footer>
+
+                </div>
+                <!-- Copyright -->
+            </footer>
+
+        </div>
+        <!-- End of .container -->
+    </footer>
+
+    <!-- Custom Javascript -->
+    <script th:src="@{/js/navbar.js}"></script>
+
+    <script th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js}"></script>
+
+    <!-- MDB -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"></script>
 </body>
 
 </html>
