@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import ecommerce.ecommerce.model.MyUser;
+import ecommerce.ecommerce.model.Product;
 import ecommerce.ecommerce.repository.MyUserRepo;
+import ecommerce.ecommerce.repository.ProductRepo;
 
 @Controller
 public class MainController {
@@ -17,8 +19,13 @@ public class MainController {
     @Autowired
     private MyUserRepo myUserrRepo;
 
+    @Autowired
+    private ProductRepo productRepo;
+
     @RequestMapping("/")
-    public String index() {
+    public String index(Model model) {
+        List<Product> popular = productRepo.findByCategory("cat1");
+        model.addAttribute("popular", popular);
         return "index";
     }
 
@@ -35,7 +42,7 @@ public class MainController {
     // need to handle error at both client and server side
     // need to add case where user is not found and need
     // to be redireted to the signup page
-    //login and security is pending
+    // login and security is pending
     @RequestMapping("/login")
     @ResponseBody
     public String login(@ModelAttribute MyUser user) {
@@ -56,5 +63,13 @@ public class MainController {
         myUserrRepo.save(newUser);
         return "redirect:/";
     }
+
+    // testing
+    // @RequestMapping("/test")
+    // public String test(Model model) {
+    //     List<Product> products = productRepo.findByCategory("cat2");
+    //     model.addAttribute("products", products);
+    //     return "test";
+    // }
 
 }
