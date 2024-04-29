@@ -111,7 +111,6 @@
         <!-- Navbar -->
     </header>
     <!--Main Navigation-->
-
     <!-- Carousel Section -->
     <section>
         <div id="carouselExampleCrossfade" class="carousel slide carousel-fade" data-mdb-ride="carousel"
@@ -152,6 +151,7 @@
 
     </section>
     <!-- Carousel Section -->
+    <h1 th:text="${session.userName}"></h1>
 
     <!--Products Section -->
     <section>
@@ -169,7 +169,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p th:text="${i.description}" class="card-text">.</p>
+                            <p th:text="${i.description}" class="card-text"></p>
                         </div>
                     </div>
                 </div>
