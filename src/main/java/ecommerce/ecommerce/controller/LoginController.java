@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpSession;
 public class LoginController {
 
     @Autowired
-    private MyUserRepo myUserrRepo;
+    private MyUserRepo myUserRepo;
 
     @Autowired
     private ProductRepo productRepo;
@@ -50,7 +50,7 @@ public class LoginController {
     @RequestMapping("/login")
     // @ResponseBody
     public String login(@ModelAttribute MyUser user, HttpSession session) {
-        Optional<MyUser> obj = myUserrRepo.findByName(user.getName());
+        Optional<MyUser> obj = myUserRepo.findByName(user.getName());
         session.setAttribute("userName", obj.get().getName());
         session.setAttribute("userID", obj.get().getId());
         return "redirect:/";
@@ -61,6 +61,13 @@ public class LoginController {
     public String signUpPage(Model model) {
         model.addAttribute("newUser", new MyUser());
         return "signup";
+    }
+
+    @RequestMapping("/addUser")
+    public String addUser(@ModelAttribute MyUser newUser) {
+
+        myUserRepo.save(newUser);
+        return "redirect:/";
     }
 
 
