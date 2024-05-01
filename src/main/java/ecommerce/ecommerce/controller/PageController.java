@@ -30,7 +30,8 @@ public class PageController {
     public String cartPage(Model model) {
         // this user id will get from session
         // this cartlist contain all info userid and productid
-        int id =(int) session.getAttribute("userID");
+        // this will used in other parts also
+        int id = (int) session.getAttribute("userID");
         List<Cart> cartList = cartRepo.findByUserid(id);
 
         // this is the list of product stored in cart
@@ -43,6 +44,9 @@ public class PageController {
                 productList.add(product);
             }
         }
+
+        double total = productList.stream().mapToDouble(Product::getPrice).sum();
+        model.addAttribute("total", total);
 
         model.addAttribute("productlist", productList);
         return "cart";

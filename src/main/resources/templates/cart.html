@@ -5,16 +5,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 
 <body>
 
+    <h1>Product List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <!-- <th>Product Name</th> -->
+                <th>Description</th>
+                <th>Price</th>
+                <!-- <th>Image</th> -->
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${productlist}">
+                <td th:text="${product.productid}"></td>
+                <!-- <td th:text="${product.productName}"></td> -->
+                <td th:text="${product.description}"></td>
+                <td th:text="${product.price}"></td>
+                <!-- <td th:text="${product.image}"></td> -->
+                <td th:text="${product.category}"></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <ul>
-        <li th:each="productList : ${productlist}" th:text="${productList.productid}
-        "  ></li>
-    </ul>
-    
+    <h1> total price <span th:text="${total}" ></span></h1>
 
 </body>
 
