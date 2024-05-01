@@ -25,6 +25,12 @@ public class LoginController {
     @Autowired
     private ProductRepo productRepo;
 
+    // @Autowired
+    // private HttpServletRequest request;
+
+    @Autowired
+    private HttpSession session;
+
     // This will take user to landing page
     @RequestMapping("/")
     public String index(Model model) {
@@ -49,14 +55,17 @@ public class LoginController {
     // login and security is pending
     @RequestMapping("/login")
     // @ResponseBody
-    public String login(@ModelAttribute MyUser user, HttpSession session) {
+    public String login(@ModelAttribute MyUser user) {
         Optional<MyUser> obj = myUserRepo.findByName(user.getName());
         session.setAttribute("userName", obj.get().getName());
-        session.setAttribute("userID", obj.get().getId());
+        session.setAttribute("userID", obj.get().getUserid());
+
+        // session.setAttribute("key", 20);
+        System.out.println("setting is done");
         return "redirect:/";
     }
 
-    //directing user or signup page.
+    // directing user or signup page.
     @RequestMapping("/signUpPage")
     public String signUpPage(Model model) {
         model.addAttribute("newUser", new MyUser());
@@ -69,14 +78,5 @@ public class LoginController {
         myUserRepo.save(newUser);
         return "redirect:/";
     }
-
-
-    // testing
-    // @RequestMapping("/test")
-    // public String test(Model model) {
-    //     List<Product> products = productRepo.findByCategory("cat2");
-    //     model.addAttribute("products", products);
-    //     return "test";
-    // }
 
 }

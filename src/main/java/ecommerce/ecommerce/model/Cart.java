@@ -11,22 +11,16 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class Product {
-    
+public class Cart {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int cartid;
+
     private int productid;
 
-    private String productName;
-
-    private String description;
-    
-    private int price;
-
-    private String image;
-
-    private String category;
+    private int userid;
 }

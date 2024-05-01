@@ -18,8 +18,8 @@ import lombok.Setter;
 public class MyUser {
     
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    private int userid;
 
     private String name;
 

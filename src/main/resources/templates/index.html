@@ -60,9 +60,11 @@
 
                 <!-- Right elements -->
                 <div class="d-flex align-items-center">
-                    <!-- Icon -->
-                    <a class="text-reset me-3" href="#">
+                    <!-- Cart Icon -->
+                    <a class="text-reset me-3" th:href="@{/cartPage}">
                         <i class="fas fa-shopping-cart"></i>
+                        <span class="badge rounded-pill badge-notification bg-danger"
+                            th:text="${session.cartNo}"></span>
                     </a>
 
                     <!-- Notifications -->
@@ -170,6 +172,16 @@
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
                             <p th:text="${i.description}" class="card-text"></p>
+                            <p th:text="${i.productid}" class="card-text"></p>
+                            <p th:text="${session.userID}" class="card-text"></p>
+
+                            <!-- This is providing userid  and productid to cartController following CART model attribute -->
+                            <form th:action="@{/addToCart}" method="post">
+                                <!-- this will change to productid manual id -->
+                                <input type="hidden" name="productid" th:value="${i.productid}" />
+                                <input type="hidden" name="userid" th:value="${session.userID}" />
+                                <button type="submit">Send Data</button>
+                            </form>
                         </div>
                     </div>
                 </div>
