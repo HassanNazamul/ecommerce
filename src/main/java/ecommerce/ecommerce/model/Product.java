@@ -26,7 +26,7 @@ public class Product {
     
     private int price;
 
-    private String image;
+    // private String image;
 
     private String category;
 }
