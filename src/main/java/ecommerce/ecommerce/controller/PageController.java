@@ -26,17 +26,23 @@ public class PageController {
     @Autowired
     private HttpSession session;
 
+    //this will take the user to cart Page
     @RequestMapping("/cartPage")
     public String cartPage(Model model) {
         // this user id will get from session
         // this cartlist contain all info userid and productid
         // this will used in other parts also
         int id = (int) session.getAttribute("userID");
+
+        //this provide the Cartlist of Object (cartis, userid, productid)
         List<Cart> cartList = cartRepo.findByUserid(id);
 
-        // this is the list of product stored in cart
+        //this is the list of only product object
+        //(productid, category, price, description) stored in cart
         List<Product> productList = new ArrayList<>();
 
+        //using the cart list to get the productid and use the productid 
+        //to make the list of product
         for (Cart cart : cartList) {
             Optional<Product> optionalProduct = productRepo.findById(cart.getProductid());
             if (optionalProduct.isPresent()) {

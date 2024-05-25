@@ -167,6 +167,8 @@
         <!-- cards to show popular cakes -->
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <!-- this popular is list of cat1 product -->
                 <div th:each="i : ${popular}" class="col">
                     <div class="card h-100 w-75">
                         <div>
@@ -178,7 +180,9 @@
                             <p th:text="${i.productid}" class="card-text"></p>
                             <p th:text="${session.userID}" class="card-text"></p>
 
-                            <!-- This is providing userid  and productid to cartController following CART model attribute -->
+                            <!-- This is providing userid  and productid to cartController following CART model attribute 
+                            It do not need used input thats wht there is no 
+                            object attribute in form-->
                             <form th:action="@{/addToCart}" method="post">
                                 <!-- this will change to productid manual id -->
                                 <input type="hidden" name="productid" th:value="${i.productid}" />

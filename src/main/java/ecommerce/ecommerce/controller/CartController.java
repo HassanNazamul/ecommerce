@@ -21,22 +21,28 @@ public class CartController {
     @Autowired
     private CartRepo cartRepo;
 
+    //this method is to add the product to the cart
+    //the model is comming from add button in product tile as form.
+    // we are not using cart empty object to get filled by user.
     @PostMapping("/addToCart")
     public String register(@ModelAttribute Cart cart) {
         int productid = cart.getProductid();// this won't provide cart id.
 
-        // getting cart object from db by product id;
+        // getting cart single object from db by product id;
         Optional<Cart> repeatProduct = cartRepo.findByProductid(productid);
 
+        //if the productid already exist, then the quantity will increase,
+        //it will prevent the dublicate entry and reduncy.
+        //for same product the existing cartId/ cart onject will update,
+        //preventing the new entry for the same product
         if (repeatProduct.isPresent()) {
-
-            Cart samePro = repeatProduct.get();
-            int initQnt = samePro.getQuantity();
-            samePro.setQuantity(initQnt + 1);
-            cartRepo.save(samePro);
+            Cart samePro = repeatProduct.get(); //typecasting optional to Cart
+            int initQnt = samePro.getQuantity();//getting the initial quantity
+            samePro.setQuantity(initQnt + 1);//incrementing by 1.
+            cartRepo.save(samePro); //updating the cart for particualer product
             System.out.println("yes");
         } else {
-            cartRepo.save(cart);
+            cartRepo.save(cart);// if there is no product then new entry will occur.
             System.out.println("no");
         }
 
@@ -50,9 +56,11 @@ public class CartController {
         // getting cart object from db by product id;
         Optional<Cart> product = cartRepo.findByProductid(productid);
 
-        //
+        //gettting the cartid from cart object which is found in
+        //above statement
         int cartId = product.get().getCartid();
 
+        //deleting the whole single cart object
         cartRepo.deleteById(cartId);
         return "redirect:/";
 
