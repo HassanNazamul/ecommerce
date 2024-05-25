@@ -10,13 +10,13 @@
 </head>
 
 <body>
-
-    <section>
-        <!-- Popular section -->
+    <h1>Test Page</h1>
+    <!-- <section>
+        Popular section
         <div class="container-fluid">
             <h1>Most Popular</h1>
         </div>
-        <!-- cards to show popular cakes -->
+        cards to show popular cakes
         <div class="container-fluid">
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div th:each=" i : ${products}" class="col">
@@ -32,8 +32,10 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    </section> -->
+    <h1 th:text="${session.userID}"></h1>
+    <br>
+    <h1 th:text="${session.userName}"></h1>
 </body>
 
 </html>

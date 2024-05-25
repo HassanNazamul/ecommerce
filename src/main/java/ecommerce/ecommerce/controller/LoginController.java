@@ -8,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-// import org.springframework.web.bind.annotation.ResponseBody;
 
 import ecommerce.ecommerce.model.MyUser;
 import ecommerce.ecommerce.model.Product;
@@ -34,7 +33,11 @@ public class LoginController {
     // This will take user to landing page
     @RequestMapping("/")
     public String index(Model model) {
+
+        //This is the list of the product object, which is found by category
         List<Product> popular = productRepo.findByCategory("cat1");
+
+        //this time it is sending the single category
         model.addAttribute("popular", popular);
         return "index";
     }

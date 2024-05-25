@@ -23,4 +23,6 @@ public class Cart {
     private int productid;
 
     private int userid;
+
+    private int quantity;
 }
