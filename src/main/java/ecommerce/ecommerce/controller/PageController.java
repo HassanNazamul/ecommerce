@@ -52,4 +52,9 @@ public class PageController {
         return "cart";
     }
 
+    @RequestMapping("/test")
+    public String test() {
+        return "test";
+    }
+
 }

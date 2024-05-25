@@ -28,6 +28,7 @@
 <body>
 
     <h1>Product List</h1>
+    <h1 th:text="${session.userID}"></h1>
     <table>
         <thead>
             <tr>
@@ -37,6 +38,7 @@
                 <th>Price</th>
                 <!-- <th>Image</th> -->
                 <th>Category</th>
+                <th>Modify</th>
             </tr>
         </thead>
         <tbody>
@@ -47,11 +49,17 @@
                 <td th:text="${product.price}"></td>
                 <!-- <td th:text="${product.image}"></td> -->
                 <td th:text="${product.category}"></td>
+                <td>
+                    <form th:action="@{/removeProduct}" method="post">
+                        <input type="hidden" name="productid" th:value="${product.productid}" />
+                        <button type="submit">delete</button>
+                    </form>
+                </td>
             </tr>
         </tbody>
     </table>
 
-    <h1> total price <span th:text="${total}" ></span></h1>
+    <h1> total price <span th:text="${total}"></span></h1>
 
 </body>
 
